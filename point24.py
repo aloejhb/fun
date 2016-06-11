@@ -1,9 +1,5 @@
 import numpy as np
 import itertools
-a = 8
-b = 3
-c = 2
-d = 6
 
 
 def operation(xy, op):
@@ -32,9 +28,22 @@ def try_partition(ab, cd):
         if ans == 24:
             print ab, cd, ops
         
-def try24(a, b, c, d):
+def point24(nos):
+    a, b, c, d = nos
     try_partition((a,b), (c,d))
     try_partition((a,c), (b,d))
     try_partition((b,c), (a,d))
     
     
+a = 8
+b = 3
+c = 2
+d = 6
+
+while 1:
+    str = raw_input("Please enter 4 pos int, separated by comma:\n")
+    if str == 'q':
+        break
+    else:
+        nos = map(int, str.split(','))
+        point24(nos)
